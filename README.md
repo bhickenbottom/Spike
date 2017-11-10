@@ -1,4 +1,5 @@
-# Spike: .NET Core Path Tracer
+# Spike
+## .NET Core Path Tracer
 
 Spike is a C# .NET Core 2.0 path tracer with multithreading and SIMD, including a bit of code to create abstract art.
 
