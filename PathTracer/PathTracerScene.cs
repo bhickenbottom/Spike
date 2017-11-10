@@ -18,8 +18,6 @@ namespace PathTracer
 
         public Action<int> Animator { get; set; }
 
-        public PathTracerMaterial AtmosphereMaterial { get; set; }
-
         public PathTracerMaterial BackgroundMaterial { get; set; }
 
         public PathTracerCamera Camera { get; set; }

@@ -37,20 +37,23 @@ namespace PathTracer
                 scene.FogColor = PathTracerColor.Black;
                 scene.FogDistance = 0;
 
-                // Scene Generation
+                // Scene Generation (Light Box)
+                //PathTracerSceneGenerator.GenerateLightBox(scene, new Vector3(-200, -200, -200), new Vector3(200, 200, 200));
+
+                // Scene Generation (Abstract)
                 PathTracerSceneGenerator.GenerateAbstract(scene, new Vector3(-100, -100, -100), new Vector3(100, 100, 100), 40, 0.1F, 0.3333F);
 
                 // Options
                 ConsolePercentageDisplay consolePercentageDisplay = new ConsolePercentageDisplay();
                 PathTracerOptions options = new PathTracerOptions();
-                options.Width = 3840;
-                options.Height = 2160;
+                options.Width = 1920;
+                options.Height = 1080;
                 options.BounceCount = 8;
                 options.SamplesPerPixel = 8;
                 options.FrameCount = 1;
                 options.MaxDegreeOfParallelism = 2;
                 options.PercentageDisplay = consolePercentageDisplay.Display;
-                options.RenderMode = PathTracerRenderMode.PathTracer;
+                options.RenderMode = PathTracerRenderMode.DistanceTraveled;
                 options.PixelSampleRate = 1F;
 
                 // Engine
