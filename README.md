@@ -31,7 +31,7 @@ You'll need to assign a `PathTracerCamera` to your scene and the `PathTracerTria
 
 A material has a `Color` property and an `IsLight` property. Materials also include properties for `Gloss` and `Reflectivity`. Colors with alpha values are supported.
 
-After your create your scene you'll want to set some rendering options. These options include `Width`, `Height`, `BounceCount`, `PixelSampleRate`, `SamplesPerPixel`, `MaxDegreeOfParallelism`, and `FrameCount` (for animations). You can also include a delegate for displaying progress. `ConsolePercentageDisplay` will write this information to the console.
+After you create your scene you'll want to set some rendering options. These options include `Width`, `Height`, `BounceCount`, `PixelSampleRate`, `SamplesPerPixel`, `MaxDegreeOfParallelism`, and `FrameCount` (for animations). You can also include a delegate for displaying progress. `ConsolePercentageDisplay` will write this information to the console.
 
 Next, you'll want to create a frame recorder. Simply create an instance of `PngPathTracerFrameRecorder` or create your own.
 
