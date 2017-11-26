@@ -22,7 +22,7 @@ namespace PathTracer
             }
             Console.ForegroundColor = ConsoleColor.Gray;
             IPathTracerFrameRecorder frameRecorder = new PngPathTracerFrameRecorder();
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 1; i++)
             {
                 // Scene
                 PathTracerScene scene = new PathTracerScene();
@@ -38,22 +38,22 @@ namespace PathTracer
                 scene.FogDistance = 0;
 
                 // Scene Generation (Light Box)
-                //PathTracerSceneGenerator.GenerateLightBox(scene, new Vector3(-200, -200, -200), new Vector3(200, 200, 200));
+                PathTracerSceneGenerator.GenerateLightBox(scene, new Vector3(-200, -200, -200), new Vector3(200, 200, 200));
 
                 // Scene Generation (Abstract)
-                PathTracerSceneGenerator.GenerateAbstract(scene, new Vector3(-100, -100, -100), new Vector3(100, 100, 100), 40, 0.1F, 0.3333F);
+                //PathTracerSceneGenerator.GenerateAbstract(scene, new Vector3(-100, -100, -100), new Vector3(100, 100, 100), 40, 0.1F, 0.3333F);
 
                 // Options
                 ConsolePercentageDisplay consolePercentageDisplay = new ConsolePercentageDisplay();
                 PathTracerOptions options = new PathTracerOptions();
-                options.Width = 1920;
-                options.Height = 1080;
+                options.Width = 3840;
+                options.Height = 2160;
                 options.BounceCount = 8;
-                options.SamplesPerPixel = 8;
+                options.SamplesPerPixel = 1024;
                 options.FrameCount = 1;
-                options.MaxDegreeOfParallelism = 2;
+                options.MaxDegreeOfParallelism = 4;
                 options.PercentageDisplay = consolePercentageDisplay.Display;
-                options.RenderMode = PathTracerRenderMode.DistanceTraveled;
+                options.RenderMode = PathTracerRenderMode.PathTracer;
                 options.PixelSampleRate = 1F;
 
                 // Engine

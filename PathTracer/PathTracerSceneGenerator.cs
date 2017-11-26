@@ -54,13 +54,13 @@ namespace PathTracer
             Vector3 boxArea = new Vector3(upperBounds.X - lowerBounds.X, upperBounds.Y - lowerBounds.Y, upperBounds.Z - lowerBounds.Z);
 
             // Colors
-            PathTracerColor red = PathTracerColor.Red;
+            PathTracerColor red = new PathTracerColor(1, 1, 0, 0.392F);
             PathTracerColor safeRed = PathTracerColor.MakeMaterialSafe(ref red);
-            PathTracerColor yellow = PathTracerColor.Yellow;
+            PathTracerColor yellow = new PathTracerColor(1, 1, 0.784F, 0);
             PathTracerColor safeYellow = PathTracerColor.MakeMaterialSafe(ref yellow);
-            PathTracerColor green = PathTracerColor.Green;
+            PathTracerColor green = new PathTracerColor(1, 0.196F, 0.784F, 0);
             PathTracerColor safeGreen = PathTracerColor.MakeMaterialSafe(ref green);
-            PathTracerColor blue = PathTracerColor.Blue;
+            PathTracerColor blue = new PathTracerColor(1, 0.392F, 0.294F, 1);
             PathTracerColor safeBlue = PathTracerColor.MakeMaterialSafe(ref blue);
 
             // Back Wall
@@ -114,7 +114,7 @@ namespace PathTracer
 
             // Floor
             PathTracerMaterial floorMaterial = new PathTracerMaterial();
-            floorMaterial.Color = PathTracerColor.Gray;
+            floorMaterial.Color = safeBlue;
             floorMaterial.Gloss = 0.75F;
             Vector3 floorTopLeft = new Vector3(lowerBounds.X, lowerBounds.Y, lowerBounds.Z);
             Vector3 floorTopRight = new Vector3(upperBounds.X, lowerBounds.Y, lowerBounds.Z);
@@ -139,7 +139,7 @@ namespace PathTracer
 
             // Test Object
             PathTracerMaterial testObjectMaterial = new PathTracerMaterial();
-            testObjectMaterial.Color = new PathTracerColor(1, 1, 1, 1);
+            testObjectMaterial.Color = new PathTracerColor(1, 4, 4, 4);
             testObjectMaterial.IsLight = true;
             Vector3 testObjectTopLeft = new Vector3(boxArea.X * -0.3F, boxArea.Y * 0.25F, boxArea.Z * -0.25F);
             Vector3 testObjectTopRight = new Vector3(boxArea.X * -0.3F, boxArea.Y * 0.25F, boxArea.Z * -0.5F);
@@ -152,7 +152,7 @@ namespace PathTracer
 
             // Test Object 2
             PathTracerMaterial testObject2Material = new PathTracerMaterial();
-            testObject2Material.Color = new PathTracerColor(0.5F, 1, 1, 1);
+            testObject2Material.Color = safeBlue;
             Vector3 testObject2TopLeft = new Vector3(boxArea.X * 0.3F, boxArea.Y * 0.25F, boxArea.Z * -0.5F);
             Vector3 testObject2TopRight = new Vector3(boxArea.X * 0.3F, boxArea.Y * 0.25F, boxArea.Z * -0.25F);
             Vector3 testObject2BottomLeft = new Vector3(boxArea.X * 0.3F, lowerBounds.Y, boxArea.Z * -0.5F);
