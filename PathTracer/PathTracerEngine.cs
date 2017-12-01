@@ -56,6 +56,12 @@ namespace PathTracer
                     // Pixel Sample Rate
                     if (RandomHelper.RandomFloat() <= options.PixelSampleRate)
                     {
+                        // Hack to make it play well with others
+                        if (pixelIndex % 64 == 0)
+                        {
+                            Thread.Sleep(1);
+                        }
+
                         // Coordinates
                         int x = pixelIndex % width;
                         int y = pixelIndex / width;
