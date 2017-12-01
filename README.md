@@ -3,7 +3,7 @@
 
 Spike is a C# .NET Core 2.0 path tracer with multithreading and SIMD, including a bit of code to create abstract art.
 
-The sample image below is 4K with a bounce count of 8 and a sample count per pixel of 2048. It took approixmately 8 hours to render on my machine.
+The sample image below is 4K with a bounce count of 8 and a sample count per pixel of 1024. It took approixmately 4 hours to render on my machine.
 
 ![Light Box](https://github.com/bhickenbottom/spike/raw/master/PathTracer/Samples/LightBox.png)
 
